@@ -14,8 +14,7 @@ datasource db {
 }
 
 model User {
-  id String @id
-
+  id            String        @id
   workoutPlans  WorkoutPlan[]
   name          String
   email         String
@@ -31,25 +30,24 @@ model User {
 }
 
 model WorkoutPlan {
-  id        String   @id @default(uuid())
-  name      String
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
+  id          String       @id @default(uuid())
+  name        String
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
   workoutDays WorkoutDay[]
+  isActive    Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
 }
 
 enum WeekDay {
-  SUNDAY
   MONDAY
   TUESDAY
   WEDNESDAY
   THURSDAY
   FRIDAY
   SATURDAY
+  SUNDAY
 }
 
 model WorkoutDay {
