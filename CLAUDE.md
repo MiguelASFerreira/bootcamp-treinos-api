@@ -51,6 +51,7 @@ Swagger JSON em `/swagger.json`, Scalar UI em `/docs`. Endpoints de auth sao mes
 
 ## Convencoes
 
+- **Conventional Commits** — **SEMPRE** use [Conventional Commits](https://www.conventionalcommits.org/) para mensagens de commit. Exemplo: `feat: add start workout session endpoint`, `fix: workout plan validation`, `docs: update architecture rules`.
 - **TypeScript strict** com target ES2024 e module resolution `nodenext`
 - **ESLint** com typescript-eslint, integracao com prettier e `simple-import-sort` (imports devem ser ordenados)
 - **Zod 4** para validacao (usa padrao `z.interface()`, nao `z.object()`)
