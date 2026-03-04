@@ -53,6 +53,7 @@ enum WeekDay {
 model WorkoutDay {
   id                         String            @id @default(uuid())
   name                       String
+  coverImageUrl              String?
   workoutPlanId              String
   workoutPlan                WorkoutPlan       @relation(fields: [workoutPlanId], references: [id], onDelete: Cascade)
   isRest                     Boolean           @default(false)
