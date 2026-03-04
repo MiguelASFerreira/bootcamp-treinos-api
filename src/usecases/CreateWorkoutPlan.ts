@@ -7,7 +7,7 @@ interface InputDto {
   name: string;
   workoutDays: Array<{
     name: string;
-    coverImageUrl?: string;
+    coverImageUrl?: string | null;
     weekDay: WeekDay;
     isRest: boolean;
     estimatedDurationInSeconds: number;
@@ -75,7 +75,7 @@ export class CreateWorkoutPlan {
           workoutDays: {
             create: dto.workoutDays.map((workoutDay) => ({
               name: workoutDay.name,
-              coverImageUrl: workoutDay.coverImageUrl,
+              coverImageUrl: workoutDay.coverImageUrl ?? undefined,
               weekDay: workoutDay.weekDay,
               isRest: workoutDay.isRest,
               estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
