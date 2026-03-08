@@ -45,16 +45,18 @@ export const UpdateWorkoutSessionResponseSchema = z.object({
 
 export const HomeResponseSchema = z.object({
   activeWorkoutPlanId: z.string(),
-  todayWorkoutDay: z.object({
-    workoutPlanId: z.string(),
-    id: z.string(),
-    name: z.string(),
-    isRest: z.boolean(),
-    weekDay: z.string(),
-    estimatedDurationInSeconds: z.number(),
-    coverImageUrl: z.string().optional(),
-    exercisesCount: z.number(),
-  }),
+  todayWorkoutDay: z
+    .object({
+      workoutPlanId: z.string(),
+      id: z.string(),
+      name: z.string(),
+      isRest: z.boolean(),
+      weekDay: z.string(),
+      estimatedDurationInSeconds: z.number(),
+      coverImageUrl: z.string().optional(),
+      exercisesCount: z.number(),
+    })
+    .optional(),
   workoutStreak: z.number(),
   consistencyByDay: z.record(
     z.iso.date(),
